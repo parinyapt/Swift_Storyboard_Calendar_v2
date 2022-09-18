@@ -9,17 +9,26 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    var language_select:String = "en_US"
-    var date_select:Date = Date()
+    var language_select:Int = 0
+    var date_select:Date = CalendarHelper().plusMonth(date: Date())
     
     var date_array:Array = [String]()
     var holiday_highlight_array:Array = [Int]()
-    var holiday_array:Dictionary = [String:[String:String]]()
+    var holiday_detail_array:Array = [[String:String]]()
+    var holiday_array:[Int:[String:[String:String]]] = [0:[:],1:[:]]
 
     @IBOutlet weak var weekDayView: UICollectionView!
     @IBOutlet weak var DateView: UICollectionView!
-    
+    @IBOutlet weak var HolidayView: UITableView!
     @IBOutlet weak var monthYearLabel: UILabel!
+    
+    @IBAction func changeLanguage(_ sender: Any) {
+        let s:UISegmentedControl = sender as! UISegmentedControl
+        language_select = s.selectedSegmentIndex
+        setupDateInMonth()
+        weekDayView.reloadData()
+        getHoliday()
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,6 +44,9 @@ class ViewController: UIViewController {
         DateView.delegate = self
         DateView.collectionViewLayout = UICollectionViewFlowLayout()
         
+        HolidayView.dataSource = self
+        HolidayView.delegate = self
+        
         //setup date in month
         setupDateInMonth()
     }
@@ -45,22 +57,33 @@ class ViewController: UIViewController {
     }
     
     func getHoliday() {
-        CalendarHelper().reqHolidayData(completion: { data in
-            self.holiday_array = data
-        })
-        sleep(3)
+        if self.holiday_array[self.language_select]!.count == 0 {
+            CalendarHelper().reqHolidayData(lang:language_select,completion: { data in
+                self.holiday_array[self.language_select] = data
+            })
+            sleep(3)
+        }
         showHoliday()
     }
     
     func showHoliday() {
         holiday_highlight_array.removeAll()
+        holiday_detail_array.removeAll()
         
         for (index, element) in date_array.enumerated() {
-            if holiday_array[(CalendarHelper().monthYearNumber(date: date_select)+element)] != nil {
+            let date = (CalendarHelper().monthYearNumber(date: date_select)+element)
+            if holiday_array[language_select]![date] != nil {
                 holiday_highlight_array.append(index)
+                let array = [
+                    "date":element,
+                    "name":holiday_array[language_select]![date]!["name"]!,
+                    "description":holiday_array[language_select]![date]!["description"]!
+                ]
+                holiday_detail_array.append(array)
             }
         }
         DateView.reloadData()
+        HolidayView.reloadData()
     }
     
     func setupDateInMonth() {
@@ -74,7 +97,7 @@ class ViewController: UIViewController {
             date_array.append(String(i))
         }
         
-        monthYearLabel.text = CalendarHelper().monthYearString(date: date_select)
+        monthYearLabel.text = CalendarHelper().monthYearString(lang:language_select,date: date_select)
         
         if(holiday_array.count > 0){
             showHoliday()
@@ -112,7 +135,7 @@ extension ViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if collectionView == self.weekDayView {
             let cell = weekDayView.dequeueReusableCell(withReuseIdentifier: "weekDayCellID", for: indexPath) as! weekDayCell
-            cell.config(data: "\(CalendarHelper().shortWeekDayName(number: indexPath.item))")
+            cell.config(data: "\(CalendarHelper().shortWeekDayName(lang:language_select,number: indexPath.item))")
             
             return cell
         } else {
@@ -145,5 +168,20 @@ extension ViewController: UICollectionViewDelegateFlowLayout {
         }
         
         return CGSize(width: width, height: height)
+    }
+}
+
+extension ViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return holiday_highlight_array.count
+    }
+}
+
+extension ViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = HolidayView.dequeueReusableCell(withIdentifier: "HolidayCell_ID", for: indexPath) as! HolidayCell
+        cell.config(date: holiday_detail_array[indexPath.item]["date"]!, name: holiday_detail_array[indexPath.item]["name"]!)
+
+        return cell
     }
 }

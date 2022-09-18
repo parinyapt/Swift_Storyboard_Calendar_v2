@@ -6,3 +6,14 @@
 //
 
 import UIKit
+
+let language_config:[Int:[String:String]] = [
+    0:[
+        "languageCode":"th",
+        "region":"TH"
+    ],
+    1:[
+        "languageCode":"en",
+        "region":"US"
+    ]
+]

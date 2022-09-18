@@ -11,8 +11,8 @@ import UIKit
 class CalendarHelper {
     var calendar = Calendar(identifier: .iso8601)
     
-    func shortWeekDayName(number:Int) -> String {
-        calendar.locale = Locale(identifier: "en_US")
+    func shortWeekDayName(lang:Int,number:Int) -> String {
+        calendar.locale = Locale(identifier: "\(language_config[lang]!["languageCode"]!)_\(language_config[lang]!["region"]!)")
         return calendar.shortWeekdaySymbols[number]
     }
     
@@ -28,9 +28,9 @@ class CalendarHelper {
         return dateinfo.weekday!
     }
     
-    func monthYearString(date: Date) -> String {
+    func monthYearString(lang:Int,date: Date) -> String {
         let dateFormatter = DateFormatter()
-        dateFormatter.locale = Locale(identifier: "en_US")
+        dateFormatter.locale = Locale(identifier: "\(language_config[lang]!["languageCode"]!)_\(language_config[lang]!["region"]!)")
         dateFormatter.dateFormat = "MMMM yyyy"
         return dateFormatter.string(from: date)
     }
@@ -67,11 +67,11 @@ class CalendarHelper {
         let date: String
     }
     
-    func reqHolidayData(completion: @escaping (([String:[String:String]]) -> Void)) {
+    func reqHolidayData(lang:Int,completion: @escaping (([String:[String:String]]) -> Void)) {
         
         var temp_data:Dictionary = [String:[String:String]]()
         
-        guard let url = URL(string: "https://www.googleapis.com/calendar/v3/calendars/en.th%23holiday%40group.v.calendar.google.com/events?key=&timeMax=2024-01-01T00:00:00Z&timeMin=2020-01-01T00:00:00Z&singleEvents=true&orderBy=startTime") else {
+        guard let url = URL(string: "https://www.googleapis.com/calendar/v3/calendars/\(language_config[lang]!["languageCode"]!).th%23holiday%40group.v.calendar.google.com/events?key=AIzaSyAL_eIzawVhxm1U94nGwWTRjtfwuXklICI&timeMax=2024-01-01T00:00:00Z&timeMin=2020-01-01T00:00:00Z&singleEvents=true&orderBy=startTime") else {
             return
         }
         var request = URLRequest(url: url)

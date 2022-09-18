@@ -20,6 +20,7 @@
 		AFBE243C28D6D750003B1037 /* ConfigData.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFBE243B28D6D750003B1037 /* ConfigData.swift */; };
 		AFBE243E28D6D89E003B1037 /* CalendarHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFBE243D28D6D89E003B1037 /* CalendarHelper.swift */; };
 		AFBE244028D6E602003B1037 /* DateCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFBE243F28D6E602003B1037 /* DateCell.swift */; };
+		AFBE244228D767D3003B1037 /* HolidayCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFBE244128D767D3003B1037 /* HolidayCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,7 @@
 		AFBE243B28D6D750003B1037 /* ConfigData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigData.swift; sourceTree = "<group>"; };
 		AFBE243D28D6D89E003B1037 /* CalendarHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarHelper.swift; sourceTree = "<group>"; };
 		AFBE243F28D6E602003B1037 /* DateCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateCell.swift; sourceTree = "<group>"; };
+		AFBE244128D767D3003B1037 /* HolidayCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HolidayCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +89,7 @@
 		AF65E46028D61CC1002CA434 = {
 			isa = PBXGroup;
 			children = (
+				AFBE244128D767D3003B1037 /* HolidayCell.swift */,
 				AF65E46B28D61CC1002CA434 /* assignment3-calendar-final */,
 				AF65E48228D61CC2002CA434 /* assignment3-calendar-finalTests */,
 				AF65E48C28D61CC2002CA434 /* assignment3-calendar-finalUITests */,
@@ -276,6 +279,7 @@
 				AF65E46D28D61CC1002CA434 /* AppDelegate.swift in Sources */,
 				AFBE243A28D6D4CF003B1037 /* weekDayCell.swift in Sources */,
 				AF65E46F28D61CC1002CA434 /* SceneDelegate.swift in Sources */,
+				AFBE244228D767D3003B1037 /* HolidayCell.swift in Sources */,
 				AFBE243C28D6D750003B1037 /* ConfigData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
