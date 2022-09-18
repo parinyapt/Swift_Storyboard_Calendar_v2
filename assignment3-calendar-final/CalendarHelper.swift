@@ -65,7 +65,7 @@ class CalendarHelper {
         let datenow = dateFormatter.date(from:nowDate) ?? dateFormatter.date(from:"2001-01-01")
         let dateinfo = calendar.dateComponents([.year], from: datenow!)
         var datestart = dateFormatter.date(from:"\(dateinfo.year!)-\(startDate)")!
-        var dateend = dateFormatter.date(from:"\(dateinfo.year!)-\(endDate)")!
+        let dateend = dateFormatter.date(from:"\(dateinfo.year!)-\(endDate)")!
 
         if dateend < datestart {
             datestart = dateFormatter.date(from:"\(dateinfo.year!-1)-\(startDate)")!
