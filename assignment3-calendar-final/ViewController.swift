@@ -10,7 +10,7 @@ import UIKit
 class ViewController: UIViewController {
     
     var language_select:Int = 0
-    var date_select:Date = CalendarHelper().plusMonth(date: Date())
+    var date_select:Date = Date()
     
     var date_array:Array = [String]()
     var holiday_highlight_array:Array = [Int]()
@@ -105,7 +105,6 @@ class ViewController: UIViewController {
         
         DateView.reloadData()
     }
-    
 
     //btn action previous month
     @IBAction func previousMonth(_ sender: Any) {
@@ -168,6 +167,20 @@ extension ViewController: UICollectionViewDelegateFlowLayout {
         }
         
         return CGSize(width: width, height: height)
+    }
+}
+
+extension ViewController: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+//        print(date_array[indexPath.item])
+        if date_array[indexPath.item] != "" {
+            guard let ModalVC = storyboard?.instantiateViewController(withIdentifier: "ModalViewController") as? ModalViewController else {return}
+            ModalVC.dateSelect = "\(CalendarHelper().monthYearNumber(date: date_select))\(date_array[indexPath.item])"
+            ModalVC.languageSelect = language_select
+            
+            present(ModalVC, animated: true)
+            
+        }
     }
 }
 

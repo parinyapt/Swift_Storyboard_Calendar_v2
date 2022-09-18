@@ -35,6 +35,15 @@ class CalendarHelper {
         return dateFormatter.string(from: date)
     }
     
+    func dayMonthYearString(lang:Int,date: String) -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        let datecon = dateFormatter.date(from:date)!
+        dateFormatter.locale = Locale(identifier: "\(language_config[lang]!["languageCode"]!)_\(language_config[lang]!["region"]!)")
+        dateFormatter.dateFormat = "dd MMMM yyyy"
+        return dateFormatter.string(from: datecon)
+    }
+    
     func monthYearNumber(date: Date) -> String {
         let dateFormatter = DateFormatter()
         dateFormatter.locale = Locale(identifier: "en_US")
@@ -48,6 +57,26 @@ class CalendarHelper {
     
     func minusMonth(date: Date) -> Date {
         return calendar.date(byAdding: .month, value: -1, to: date)!
+    }
+    
+    func compareDate(nowDate:String,startDate:String,endDate:String) -> Bool {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        let datenow = dateFormatter.date(from:nowDate) ?? dateFormatter.date(from:"2001-01-01")
+        let dateinfo = calendar.dateComponents([.year], from: datenow!)
+        var datestart = dateFormatter.date(from:"\(dateinfo.year!)-\(startDate)")!
+        var dateend = dateFormatter.date(from:"\(dateinfo.year!)-\(endDate)")!
+
+        if dateend < datestart {
+            datestart = dateFormatter.date(from:"\(dateinfo.year!-1)-\(startDate)")!
+        }
+
+        let range = datestart...dateend
+        if range.contains(datenow!) {
+            return true
+        } else {
+            return false
+        }
     }
     
     

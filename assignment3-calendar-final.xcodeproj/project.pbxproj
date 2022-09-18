@@ -21,6 +21,19 @@
 		AFBE243E28D6D89E003B1037 /* CalendarHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFBE243D28D6D89E003B1037 /* CalendarHelper.swift */; };
 		AFBE244028D6E602003B1037 /* DateCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFBE243F28D6E602003B1037 /* DateCell.swift */; };
 		AFBE244228D767D3003B1037 /* HolidayCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFBE244128D767D3003B1037 /* HolidayCell.swift */; };
+		AFBE244428D78513003B1037 /* ModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFBE244328D78513003B1037 /* ModalViewController.swift */; };
+		AFBE245128D79058003B1037 /* 9.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = AFBE244528D79057003B1037 /* 9.jpeg */; };
+		AFBE245228D79058003B1037 /* 3.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = AFBE244628D79057003B1037 /* 3.jpeg */; };
+		AFBE245328D79058003B1037 /* 1.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = AFBE244728D79057003B1037 /* 1.jpeg */; };
+		AFBE245428D79058003B1037 /* 8.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = AFBE244828D79057003B1037 /* 8.jpeg */; };
+		AFBE245528D79058003B1037 /* 10.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = AFBE244928D79057003B1037 /* 10.jpeg */; };
+		AFBE245628D79058003B1037 /* 11.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = AFBE244A28D79058003B1037 /* 11.jpeg */; };
+		AFBE245728D79058003B1037 /* 5.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = AFBE244B28D79058003B1037 /* 5.jpeg */; };
+		AFBE245828D79058003B1037 /* 2.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = AFBE244C28D79058003B1037 /* 2.jpeg */; };
+		AFBE245928D79058003B1037 /* 6.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = AFBE244D28D79058003B1037 /* 6.jpeg */; };
+		AFBE245A28D79058003B1037 /* 4.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = AFBE244E28D79058003B1037 /* 4.jpeg */; };
+		AFBE245B28D79058003B1037 /* 0.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = AFBE244F28D79058003B1037 /* 0.jpeg */; };
+		AFBE245C28D79058003B1037 /* 7.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = AFBE245028D79058003B1037 /* 7.jpeg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +72,19 @@
 		AFBE243D28D6D89E003B1037 /* CalendarHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarHelper.swift; sourceTree = "<group>"; };
 		AFBE243F28D6E602003B1037 /* DateCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateCell.swift; sourceTree = "<group>"; };
 		AFBE244128D767D3003B1037 /* HolidayCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HolidayCell.swift; sourceTree = "<group>"; };
+		AFBE244328D78513003B1037 /* ModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalViewController.swift; sourceTree = "<group>"; };
+		AFBE244528D79057003B1037 /* 9.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 9.jpeg; sourceTree = "<group>"; };
+		AFBE244628D79057003B1037 /* 3.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 3.jpeg; sourceTree = "<group>"; };
+		AFBE244728D79057003B1037 /* 1.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 1.jpeg; sourceTree = "<group>"; };
+		AFBE244828D79057003B1037 /* 8.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 8.jpeg; sourceTree = "<group>"; };
+		AFBE244928D79057003B1037 /* 10.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 10.jpeg; sourceTree = "<group>"; };
+		AFBE244A28D79058003B1037 /* 11.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 11.jpeg; sourceTree = "<group>"; };
+		AFBE244B28D79058003B1037 /* 5.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 5.jpeg; sourceTree = "<group>"; };
+		AFBE244C28D79058003B1037 /* 2.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 2.jpeg; sourceTree = "<group>"; };
+		AFBE244D28D79058003B1037 /* 6.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 6.jpeg; sourceTree = "<group>"; };
+		AFBE244E28D79058003B1037 /* 4.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 4.jpeg; sourceTree = "<group>"; };
+		AFBE244F28D79058003B1037 /* 0.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 0.jpeg; sourceTree = "<group>"; };
+		AFBE245028D79058003B1037 /* 7.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 7.jpeg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,7 +115,7 @@
 		AF65E46028D61CC1002CA434 = {
 			isa = PBXGroup;
 			children = (
-				AFBE244128D767D3003B1037 /* HolidayCell.swift */,
+				AFBE245D28D7905E003B1037 /* images */,
 				AF65E46B28D61CC1002CA434 /* assignment3-calendar-final */,
 				AF65E48228D61CC2002CA434 /* assignment3-calendar-finalTests */,
 				AF65E48C28D61CC2002CA434 /* assignment3-calendar-finalUITests */,
@@ -112,11 +138,13 @@
 			children = (
 				AF65E46C28D61CC1002CA434 /* AppDelegate.swift */,
 				AF65E46E28D61CC1002CA434 /* SceneDelegate.swift */,
+				AFBE244128D767D3003B1037 /* HolidayCell.swift */,
 				AF65E47028D61CC1002CA434 /* ViewController.swift */,
 				AFBE243F28D6E602003B1037 /* DateCell.swift */,
 				AFBE243D28D6D89E003B1037 /* CalendarHelper.swift */,
 				AFBE243B28D6D750003B1037 /* ConfigData.swift */,
 				AF65E47228D61CC1002CA434 /* Main.storyboard */,
+				AFBE244328D78513003B1037 /* ModalViewController.swift */,
 				AFBE243928D6D4CF003B1037 /* weekDayCell.swift */,
 				AF65E47528D61CC2002CA434 /* Assets.xcassets */,
 				AF65E47728D61CC2002CA434 /* LaunchScreen.storyboard */,
@@ -140,6 +168,25 @@
 				AF65E48F28D61CC2002CA434 /* assignment3_calendar_finalUITestsLaunchTests.swift */,
 			);
 			path = "assignment3-calendar-finalUITests";
+			sourceTree = "<group>";
+		};
+		AFBE245D28D7905E003B1037 /* images */ = {
+			isa = PBXGroup;
+			children = (
+				AFBE244F28D79058003B1037 /* 0.jpeg */,
+				AFBE244728D79057003B1037 /* 1.jpeg */,
+				AFBE244C28D79058003B1037 /* 2.jpeg */,
+				AFBE244628D79057003B1037 /* 3.jpeg */,
+				AFBE244E28D79058003B1037 /* 4.jpeg */,
+				AFBE244B28D79058003B1037 /* 5.jpeg */,
+				AFBE244D28D79058003B1037 /* 6.jpeg */,
+				AFBE245028D79058003B1037 /* 7.jpeg */,
+				AFBE244828D79057003B1037 /* 8.jpeg */,
+				AFBE244528D79057003B1037 /* 9.jpeg */,
+				AFBE244928D79057003B1037 /* 10.jpeg */,
+				AFBE244A28D79058003B1037 /* 11.jpeg */,
+			);
+			path = images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -246,9 +293,21 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AFBE245A28D79058003B1037 /* 4.jpeg in Resources */,
+				AFBE245928D79058003B1037 /* 6.jpeg in Resources */,
+				AFBE245628D79058003B1037 /* 11.jpeg in Resources */,
+				AFBE245428D79058003B1037 /* 8.jpeg in Resources */,
+				AFBE245228D79058003B1037 /* 3.jpeg in Resources */,
+				AFBE245328D79058003B1037 /* 1.jpeg in Resources */,
 				AF65E47928D61CC2002CA434 /* LaunchScreen.storyboard in Resources */,
+				AFBE245728D79058003B1037 /* 5.jpeg in Resources */,
+				AFBE245B28D79058003B1037 /* 0.jpeg in Resources */,
+				AFBE245528D79058003B1037 /* 10.jpeg in Resources */,
+				AFBE245C28D79058003B1037 /* 7.jpeg in Resources */,
 				AF65E47628D61CC2002CA434 /* Assets.xcassets in Resources */,
 				AF65E47428D61CC1002CA434 /* Main.storyboard in Resources */,
+				AFBE245128D79058003B1037 /* 9.jpeg in Resources */,
+				AFBE245828D79058003B1037 /* 2.jpeg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -280,6 +339,7 @@
 				AFBE243A28D6D4CF003B1037 /* weekDayCell.swift in Sources */,
 				AF65E46F28D61CC1002CA434 /* SceneDelegate.swift in Sources */,
 				AFBE244228D767D3003B1037 /* HolidayCell.swift in Sources */,
+				AFBE244428D78513003B1037 /* ModalViewController.swift in Sources */,
 				AFBE243C28D6D750003B1037 /* ConfigData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
