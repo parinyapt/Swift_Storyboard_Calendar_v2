@@ -100,7 +100,7 @@ class CalendarHelper {
         
         var temp_data:Dictionary = [String:[String:String]]()
         
-        guard let url = URL(string: "https://www.googleapis.com/calendar/v3/calendars/\(language_config[lang]!["languageCode"]!).th%23holiday%40group.v.calendar.google.com/events?key=AIzaSyAL_eIzawVhxm1U94nGwWTRjtfwuXklICI&timeMax=2024-01-01T00:00:00Z&timeMin=2020-01-01T00:00:00Z&singleEvents=true&orderBy=startTime") else {
+        guard let url = URL(string: "https://www.googleapis.com/calendar/v3/calendars/\(language_config[lang]!["languageCode"]!).th%23holiday%40group.v.calendar.google.com/events?key=\(ProcessInfo.processInfo.environment["API_KEY"]!)&timeMax=2024-01-01T00:00:00Z&timeMin=2020-01-01T00:00:00Z&singleEvents=true&orderBy=startTime") else {
             return
         }
         var request = URLRequest(url: url)
