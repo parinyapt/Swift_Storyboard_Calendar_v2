@@ -54,6 +54,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		AF4A135328D82C000067A56D /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		AF65E46928D61CC1002CA434 /* assignment3-calendar-final.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "assignment3-calendar-final.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF65E46C28D61CC1002CA434 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AF65E46E28D61CC1002CA434 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -115,6 +116,7 @@
 		AF65E46028D61CC1002CA434 = {
 			isa = PBXGroup;
 			children = (
+				AF4A135328D82C000067A56D /* README.md */,
 				AFBE245D28D7905E003B1037 /* images */,
 				AF65E46B28D61CC1002CA434 /* assignment3-calendar-final */,
 				AF65E48228D61CC2002CA434 /* assignment3-calendar-finalTests */,
