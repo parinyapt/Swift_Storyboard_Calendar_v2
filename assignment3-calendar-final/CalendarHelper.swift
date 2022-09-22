@@ -60,21 +60,48 @@ class CalendarHelper {
     }
     
     func compareDate(nowDate:String,startDate:String,endDate:String) -> Bool {
+//        print("""
+//        --
+//        Input
+//        nowDate = \(nowDate)
+//        startDate = \(startDate)
+//        endDate = \(endDate)
+//        --
+//        """)
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd"
-        let datenow = dateFormatter.date(from:nowDate) ?? dateFormatter.date(from:"2001-01-01")
-        let dateinfo = calendar.dateComponents([.year], from: datenow!)
+        let datenow = dateFormatter.date(from:nowDate) ?? dateFormatter.date(from:"2001-01-01")!
+        let dateinfo = calendar.dateComponents([.year, .month], from: datenow)
         var datestart = dateFormatter.date(from:"\(dateinfo.year!)-\(startDate)")!
-        let dateend = dateFormatter.date(from:"\(dateinfo.year!)-\(endDate)")!
+        var dateend = dateFormatter.date(from:"\(dateinfo.year!)-\(endDate)")!
 
         if dateend < datestart {
-            datestart = dateFormatter.date(from:"\(dateinfo.year!-1)-\(startDate)")!
+            if dateinfo.month == 1 {
+//                print("datestart before format : \(datestart)")
+                datestart = dateFormatter.date(from:"\(dateinfo.year!-1)-\(startDate)")!
+//                print("datestart after format : \(datestart)")
+            } else {
+//                print("dateend before format : \(dateend)")
+                dateend = dateFormatter.date(from:"\(dateinfo.year!+1)-\(endDate)")!
+//                print("dateend after format : \(dateend)")
+            }
         }
+        
+//        print("""
+//        --
+//        Check range
+//        datenow = \(datenow)
+//        datestart = \(datestart)
+//        dateend = \(dateend)
+//        --
+//        """)
 
         let range = datestart...dateend
-        if range.contains(datenow!) {
+        if range.contains(datenow) {
+            print("check pass")
             return true
         } else {
+            print("check fail")
             return false
         }
     }
